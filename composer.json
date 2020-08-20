@@ -1,0 +1,52 @@
+{
+    "name": "codicastudio/version-control",
+    "description": "A noobs worthless garbage, just learning.",
+    "keywords": [
+        "worthless garabage by a noob."
+    ],
+    "homepage": "https://github.com/codicastudio/honeypot",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael J Brown",
+            "email": "codicastudiodev@gmail.com",
+            "homepage": "https://codicastudio.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "laravel/framework": ">=5.5.33",
+        "pragmarx/yaml": "^1.0",
+        "symfony/process": "^5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7|~8|~9",
+        "orchestra/testbench": "|5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "codicastudio\\Version\\Package\\": "src/package",
+            "codicastudio\\Version\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "component": "package",
+        "laravel": {
+            "providers": [
+                "codicastudio\\Version\\Package\\ServiceProvider"
+            ],
+            "aliases": {
+                "Version": "codicastudio\\Version\\Package\\Facade"
+            }
+        }
+    },
+    "scripts": {
+        "test": [
+            "@composer install",
+            "vendor/bin/phpunit"
+        ]
+    }
+
+
+}
